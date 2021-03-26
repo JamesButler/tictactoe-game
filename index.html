@@ -8,12 +8,22 @@
   <title>Tic Tac Toe</title>
 </head>
 <body>
+  <!-- header -->
   <div class="header" id="header">
-    <p><span>Tic Tac Toe</span></p>
+    <p><span class="spanHeader">Tic Tac Toe</span></p>
   </div>
+  
+  <!-- scoreboard -->
   <div class="score" id="score">
-    <p><span>Wins Draws Losses</span></p>
+    <p><span class="spanScore"> X Wins | Ties | O Wins </span><br></p>
   </div>
+
+  <!-- turn indicator -->
+  <div class="indicator" id="indicator">
+    <p>X's Turn</p>
+  </div>
+
+  <!-- game board -->
   <div class="board" id="board">
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
@@ -29,5 +39,7 @@
     <div data-winning-message-text></div>
     <button id="restartButton">Restart</button>
   </div>
+
+
 </body>
 </html>
