@@ -26,8 +26,14 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
-  circleTurn = false
-  document.getElementById("indicator").innerHTML = "X Starts";
+  if (xCounter > oCounter) {
+    circleTurn = true;
+    document.getElementById("indicator").innerHTML = "O Starts";
+  }
+  else {
+    circleTurn = false;
+    document.getElementById("indicator").innerHTML = "X Starts";
+  }
   cellElements.forEach(cell => {
     cell.classList.remove(X_CLASS)
     cell.classList.remove(CIRCLE_CLASS)
@@ -112,12 +118,21 @@ function checkWin(currentClass) {
 
 function applyTheme(theme) {
   document.body.classList.remove("theme-light", "theme-dark");
-  
   document.body.classList.add(`theme-${theme}`);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+
+  applyTheme(savedTheme);
+
+  for (const optionElement of document.querySelectorAll("#selTheme option")) {
+    optionElement.selected = savedTheme === optionElement.value;
+  }
+
   document.querySelector("#selTheme").addEventListener("change", function () {
+    localStorage.setItem("theme", this.value);
     applyTheme(this.value);
   });
 });
+
