@@ -38,10 +38,14 @@ body {
   padding-right: 2%;
 }
 
-.spanScore {
-  background: linear-gradient(to top, cyan 25%, transparent 25%);
-  padding-left: 1%;
-  padding-right: 1%;
+.xScore {
+  position: flex;
+  padding-right: 3.5vw;
+}
+
+.oScore {
+  position: flex;
+  padding-left: 3.5vw;
 }
 
 .indicator {

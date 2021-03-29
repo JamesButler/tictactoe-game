@@ -17,12 +17,17 @@ const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
 let circleTurn
 
+var tieCounter = 0;
+var xCounter = 0;
+var oCounter = 0;
+
 startGame()
 
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
   circleTurn = false
+  document.getElementById("indicator").innerHTML = "X Starts";
   cellElements.forEach(cell => {
     cell.classList.remove(X_CLASS)
     cell.classList.remove(CIRCLE_CLASS)
@@ -49,9 +54,20 @@ function handleClick(e) {
 
 function endGame(draw) {
   if (draw) {
-    winningMessageTextElement.innerText = 'Draw!'
-  } else {
+    winningMessageTextElement.innerText = 'Tie!'
+    tieCounter += 1;
+    document.getElementById("tieScore").innerHTML = tieCounter;
+  } 
+  else {
     winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins!`
+    if (circleTurn) {
+      oCounter += 1;
+      document.getElementById("oScore").innerHTML = oCounter;
+    }
+    else {
+      xCounter += 1;
+      document.getElementById("xScore").innerHTML = xCounter;
+    }
   }
   winningMessageElement.classList.add('show')
 }
@@ -67,6 +83,12 @@ function placeMark(cell, currentClass) {
 }
 
 function swapTurns() {
+  if (circleTurn) {
+    document.getElementById("indicator").innerHTML = "X's Turn";
+  }
+  else {
+    document.getElementById("indicator").innerHTML = "O's Turn";
+  }
   circleTurn = !circleTurn
 }
 
