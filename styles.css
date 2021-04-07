@@ -101,11 +101,19 @@ body.theme-dark {
 }
 .xScore {
   position: flex;
-  padding-right: 60px;
+  padding-right: 80px;
 }
 .oScore {
   position: flex;
-  padding-left: 60px;
+  padding-left: 80px;
+}
+.xText {
+  position: flex;
+  padding-right: 30px;
+}
+.oText {
+  position: flex;
+  padding-left: 30px;
 }
 
 /* turn indicator CSS */
@@ -212,7 +220,7 @@ body.theme-dark {
 /* end game message & restart button */
 .winning-message {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -242,4 +250,38 @@ body.theme-dark {
 }
 .winning-message.show {
   display: flex;
+}
+
+/* Moving positions for landscape on mobile */
+@media (max-width:900px) and (orientation:landscape) and (max-height:550px) {
+  .header {
+    margin-top: 10px;
+    margin-left: -37vw;
+    font-size: 1.5rem;
+  }
+  .score {
+    margin-left: -37vw;
+    margin-top: 55px;
+    font-size: 0.8rem;
+  }
+  .xScore {
+    padding-right: 40px;
+  }
+  .oScore {
+    padding-left: 40px;
+  }
+  .xText {
+    padding-right: 10px;
+  }
+  .oText {
+    padding-left: 10px;
+  }
+  .indicator {
+    margin-left: 36vw;
+    margin-top: 60px;
+  }
+  .select {
+    margin-top: 20px;
+    margin-left: 82vw;
+  }
 }
