@@ -1,10 +1,10 @@
 var cacheName = 'tictactoe-pwa';
 var filesToCache = [
   '/',
-  '/index.html',
-  '/game.html',
-  '/css/styles.css',
-  '/js/script.js'
+  './index.html',
+  './game.html',
+  './css/styles.css',
+  './js/script.js'
 ];
 
 /* Cache contents when Offline See Cache */
