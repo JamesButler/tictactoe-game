@@ -297,7 +297,7 @@ body.theme-dark {
   padding: 20px;
 }
 
-input[type=text], select {
+.form-input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -307,7 +307,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+.form-input[type=submit] {
   width: 100%;
   background-color: var(--text-color);
   color: var(--header);
@@ -318,7 +318,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+.form-input[type=submit]:hover {
   background-color: var(--header);
   color: var(--text-color);
 }

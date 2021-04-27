@@ -19,12 +19,17 @@ const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
 const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
+const playerNames = new URLSearchParams(window.location.search)
 let circleTurn
 
 // score counters
 var tieCounter = 0;
 var xCounter = 0;
 var oCounter = 0;
+
+// player names
+var playerOneName = playerNames.get('playerOne')
+var playerTwoName = playerNames.get('playerTwo')
 
 // function call to run & restart game
 startGame()
@@ -35,11 +40,11 @@ function startGame() {
   // game starts with X but O will start if their score is lower
   if (xCounter > oCounter) {
     circleTurn = true;
-    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerTwo) + " Starts (O)";
+    document.getElementById("indicator").innerHTML = playerTwoName + " Starts (O)";
   }
   else {
     circleTurn = false;
-    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerOne) + " Starts (X)";
+    document.getElementById("indicator").innerHTML = playerOneName + " Starts (X)";
   }
 
   // game-board setup
@@ -104,10 +109,10 @@ function placeMark(cell, currentClass) {
 // alternates turns & updates indicator
 function swapTurns() {
   if (circleTurn) {
-    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerOne) + "'s Turn (X)";
+    document.getElementById("indicator").innerHTML = playerOneName + "'s Turn (X)";
   }
   else {
-    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerTwo) + "'s Turn (O)";
+    document.getElementById("indicator").innerHTML = playerTwoName + "'s Turn (O)";
   }
   circleTurn = !circleTurn
 }
