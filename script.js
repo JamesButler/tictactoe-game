@@ -104,10 +104,10 @@ function placeMark(cell, currentClass) {
 // alternates turns & updates indicator
 function swapTurns() {
   if (circleTurn) {
-    document.getElementById("indicator").innerHTML = "X's Turn";
+    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerOne) + "'s Turn (X)";
   }
   else {
-    document.getElementById("indicator").innerHTML = "O's Turn";
+    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerTwo) + "'s Turn (O)";
   }
   circleTurn = !circleTurn
 }

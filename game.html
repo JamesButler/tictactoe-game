@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <title>Tic Tac Toe</title>
+</head>
+<body>
+  <!-- header -->
+  <div class="header" id="header">
+    <p><span class="spanHeader">Tic Tac Toe</span></p>
+  </div>
+  
+  <!-- scoreboard -->
+  <div class="score" id="score">
+    <p><span class="xText" id="xText">X Wins</span><span class="tieText" id="tieText">Ties</span><span class="oText" id="oText">O Wins</span><br>
+      <span class="xScore" id="xScore">0</span><span class="tieScore" id="tieScore">0</span><span class="oScore" id="oScore">0</span></p>
+  </div>
+
+  <!-- turn indicator -->
+  <div class="indicator" id="indicator">
+    <p></p>
+  </div>
+
+    <!-- dark mode selection -->
+    <div class="select">
+      <i class="material-icons">palette</i>
+      <select class="selectInput" id="selTheme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+      </select>
+    </div>
+
+  <!-- game board -->
+  <div class="board" id="board">
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+  </div>
+
+  <!-- end game message & restart button -->
+  <div class="winning-message" id="winningMessage">
+    <div data-winning-message-text></div>
+    <button id="restartButton">Restart</button>
+  </div>
+</div>
+</body>
+</html>
