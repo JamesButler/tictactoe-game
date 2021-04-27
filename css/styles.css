@@ -277,12 +277,18 @@ body.theme-dark {
     padding-left: 10px;
   }
   .indicator {
-    margin-left: 36vw;
-    margin-top: 60px;
+    margin-left: 40vw;
+    margin-top: 50px;
+    font-size: 1rem;
   }
   .select {
-    margin-top: 20px;
-    margin-left: 82vw;
+    margin-top: 40%;
+    margin-left: 84vw;
+  }
+  .form-page {
+    margin-top: 10% !important;
+    margin-left: 20% !important;
+    width: 60% !important;
   }
 }
 
@@ -290,9 +296,9 @@ body.theme-dark {
 .form-page {
   position: absolute;
   margin-top: 15%;
-  margin-left: 40%;
+  margin-left: 35%;
   border-radius: 5px;
-  width: 20%;
+  width: 30%;
   background-color: #f2f2f2;
   padding: 20px;
 }
@@ -321,4 +327,13 @@ body.theme-dark {
 .form-input[type=submit]:hover {
   background-color: var(--header);
   color: var(--text-color);
+}
+
+/* Mobile devices (phones, 700px and down) */
+@media only screen and (max-width: 700px) {
+  .form-page {
+    margin-top: 50%;
+    margin-left: 10%;
+    width: 80%;
+  }
 }
