@@ -35,11 +35,11 @@ function startGame() {
   // game starts with X but O will start if their score is lower
   if (xCounter > oCounter) {
     circleTurn = true;
-    document.getElementById("indicator").innerHTML = "O Starts";
+    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerTwo) + " Starts (O)";
   }
   else {
     circleTurn = false;
-    document.getElementById("indicator").innerHTML = "X Starts";
+    document.getElementById("indicator").innerHTML = getParameterByName(window.location.href, playerOne) + " Starts (X)";
   }
 
   // game-board setup
